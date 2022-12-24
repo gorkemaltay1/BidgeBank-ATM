@@ -1,7 +1,7 @@
 
 # BİDGE Bank
 
-Yıldız Teknik Üniversitesi Matematik Mühendisliği 4.sınıf 1.dönem de yer alan nesneye yönelik ileri programlama kapsamında verilen dönem ödevi.
+Yıldız Teknik Üniversitesi Matematik Mühendisliği 3.sınıf 1.dönem de yer alan nesneye yönelik ileri programlama kapsamında verilen dönem ödevi.
 
 
 ## ATM nasıl çalışıyor ?
@@ -72,3 +72,11 @@ Kart: Müşterinin kimliğini doğrulamak için kullanacağı ATM kartının kap
 İşlem: Müşterinin ATM'de gerçekleştirebileceği Bakiye Sorgulama, Para Yatırma, Para Çekme vb. gibi tüm işlemleri kapsar.  
 
 ![atm-class-diagram](https://github.com/SamirPaul1/object-oriented-design/blob/master/media-files/atm-class-diagram.png)
+## Kullanılan Teknolojiler
+
+**Front-End:** Tkinter 
+
+**database:** PostgreSQL  
+**Programming language** Python
+
+  
