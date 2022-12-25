@@ -23,9 +23,10 @@ while(counter > 0):
         availableBalance = customerDatas[1]
         accountType = customerDatas[2]
         Screen.show_message(menuScreen,f"{kullanıcı_Kartı.get_customer_name()} hoş geldin.")
-        menuOptions = "Deposit      Withdraw        Transfer        Balance Inquiry"
+        menuOptions = "Deposit      Withdraw        Transfer        Balance Inquiry     Internal Transfer   Exit/Take Card"
         Screen.show_message(menuScreen,message=menuOptions)
         choice = input("Lüften bir seçim yapınız:")
+        # Withdraw bitti.
         if choice == 'Withdraw':
             withdrawOptions = "$20      $40     $100    Customer amount     Cancel"
             Screen.show_message(menuScreen,withdrawOptions)
@@ -55,6 +56,7 @@ while(counter > 0):
                     print(f"${desiredWithdraw} veriliyor.")
                     Withdraw(hesap_numarası).accountBalanceWithdraw(desiredWithdraw)
                     Transaction("Completed").make_transaction("Withdraw",hesap_numarası)
+        #Deposit bitti.
         elif choice == "Deposit":
             amount = input("Please enter amount")
             print(f"{amount} the amount you entered")
@@ -87,6 +89,7 @@ while(counter > 0):
                     print("Your money don't add your account")
                     counter = 0
             counter = 0
+        # Transfer bitti.
         elif choice == "Transfer":
             control = 3
             while control > 0: 
@@ -118,9 +121,29 @@ while(counter > 0):
                     else:
                         control = 0
                         counter = 0 
+        # Balance bitti.
         elif choice == "Balance Inquiry":
             result = Balance(hesap_numarası).accountBalance()
             print(f"Total balance:{result[0]},Available Balance: {result[1]}")         
+        # Internal kaldı.
+        elif choice == "Internal Transfer":
+            # Paraya çekeceğin hesabı seçiniz:
+            account_choice = input("Select the account to withdraw money")
+            transfer_money = input("Ne kadar para transfer etmek isteriniz:")
+            if account_choice == "Saving":
+                # 1 - Parayı hesaptan kontrol edeceksin
+                # 2- Parayı kontrol ettik yeteri kadar para varsa
+                # Saving hesabından transfer_money düş ve cheking hesabına ekle.
+                # Eğer kontrol sonucu hatalı ise mesaj dön.
+                # Dönecek mesaj da yeteri kadar paranız yok desin.
+                print("Yeteri kadar paranız yok(olumsuz durum da)")
+            elif account_choice == "Checking":
+                # Parayı hesaptan kontrol edeceksin
+                # Parayı kontrol ettik yeteri kadar para varsa
+                # checking hesabından transfer_money düş ve saving hesabına ekle.
+                # Eğer kontrol sonucu hatalı ise mesaj dön.
+                # Dönecek mesaj da yeteri kadar paranız yok desin.
+                print("Yeteri kadar paranız yok(olumsuz durum da)")
     else:
         counter = counter - 1
         if counter == 0:
