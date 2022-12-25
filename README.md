@@ -75,7 +75,6 @@ Kart: Müşterinin kimliğini doğrulamak için kullanacağı ATM kartının kap
 ## Kullanılan Teknolojiler
 
 **Front-End:** Tkinter 
-
 **database:** PostgreSQL  
 **Programming language** Python
 
