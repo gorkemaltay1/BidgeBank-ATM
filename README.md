@@ -74,7 +74,7 @@ Kart: Müşterinin kimliğini doğrulamak için kullanacağı ATM kartının kap
 ![atm-class-diagram](https://github.com/SamirPaul1/object-oriented-design/blob/master/media-files/atm-class-diagram.png)
 ## Kullanılan Teknolojiler
 
-**Front-End:** Tkinter 
+**Front-End:** Tkinter   
 **database:** PostgreSQL  
 **Programming language** Python
 
