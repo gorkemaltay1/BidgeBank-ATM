@@ -128,22 +128,14 @@ while(counter > 0):
         # Internal kaldı.
         elif choice == "Internal Transfer":
             # Paraya çekeceğin hesabı seçiniz:
-            account_choice = input("Select the account to withdraw money")
-            transfer_money = input("Ne kadar para transfer etmek isteriniz:")
+            account_choice = int(input("Hesap numarası gitiniz"))
+            transfer_money = int(input("Ne kadar para transfer etmek isteriniz:"))
             if account_choice == "Saving":
-                # 1 - Parayı hesaptan kontrol edeceksin
-                # 2- Parayı kontrol ettik yeteri kadar para varsa
-                # Saving hesabından transfer_money düş ve cheking hesabına ekle.
-                # Eğer kontrol sonucu hatalı ise mesaj dön.
-                # Dönecek mesaj da yeteri kadar paranız yok desin.
-                print("Yeteri kadar paranız yok(olumsuz durum da)")
-            elif account_choice == "Checking":
-                # Parayı hesaptan kontrol edeceksin
-                # Parayı kontrol ettik yeteri kadar para varsa
-                # checking hesabından transfer_money düş ve saving hesabına ekle.
-                # Eğer kontrol sonucu hatalı ise mesaj dön.
-                # Dönecek mesaj da yeteri kadar paranız yok desin.
-                print("Yeteri kadar paranız yok(olumsuz durum da)")
+                if availableBalance > transfer_money:
+                    Transfer(account_choice,hesap_numarası).transferring_money(transfer_money)
+                else:
+                    # Front ekibi bu kısmı Error hatası şeklinde kırmızı versin.
+                    print("İşleminiz gerçekleştirilmedi")
     else:
         counter = counter - 1
         if counter == 0:
