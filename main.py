@@ -125,23 +125,26 @@ while(counter > 0):
         elif choice == "Balance Inquiry":
             result = Balance(hesap_numarası).accountBalance()
             print(f"Total balance:{result[0]},Available Balance: {result[1]}")         
-        # Internal kaldı.
+        # Internal bitti.
         elif choice == "Internal Transfer":
             # Paraya çekeceğin hesabı seçiniz:
             account_choice = int(input("Hesap numarası gitiniz"))
             transfer_money = int(input("Ne kadar para transfer etmek isteriniz:"))
-            if account_choice == "Saving":
-                if availableBalance > transfer_money:
-                    Transfer(account_choice,hesap_numarası).transferring_money(transfer_money)
-                else:
-                    # Front ekibi bu kısmı Error hatası şeklinde kırmızı versin.
-                    print("İşleminiz gerçekleştirilmedi")
+            if availableBalance > transfer_money:
+                Transfer(account_choice,hesap_numarası).transferring_money(transfer_money)
+            else:
+                # Front ekibi bu kısmı Error hatası şeklinde kırmızı versin.
+                print("İşleminiz gerçekleştirilmedi")
+        # Exit/Take Card bitti.
+        elif choice == "Exit/Take Card":
+            counter = 0
     else:
         counter = counter - 1
         if counter == 0:
             print("Hakkınız kalmadı.")
         else:
             print(f"{counter} hakkınız kaldı.")
+    
 print("Hoşca kalın...")
 
 
