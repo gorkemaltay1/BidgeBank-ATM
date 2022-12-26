@@ -138,20 +138,25 @@ while(counter > 0):
         # Exit/Take Card bitti.
         elif choice == "Exit/Take Card":
             counter = 0
-        elif choice == "Change Pın":
+        elif choice == "Change Pin":
             # Kullanıcıdan ilk önce kendi pin adresini alırız.
             pin = input("Pin tekrar giriniz:")
+            if pin == kullanıcı_şifresi:
+                new_pin = input("Yeni şifrenizi giriniz:")
+                #Yeni şifre tekrar giriniz
+                new2_pin = input("Yeni şifre tekrar giriniz")
+                if new_pin == new2_pin :
+                    print("Şifreniz güncellendi!")
+                    Card(kullanıcı_numarası,kullanıcı_şifresi).change_pin(new_pin)
+                else:
+                    print("Şifreniz güncellenmedi")
+                counter = 0
+            else:
+                counter = 0
             # pin kontrol edilir eğer eski ile aynıysa devam değilse counter 0 olacak.
             # SQL sorgusunda kullanıcının account_number dan pin ile kendi şifresi karşıştır doğru ise diğer işlem değilse counter 0 
             #Yeni şifre isteriz
-            new_pin = input("Yeni şifrenizi giriniz:")
-            #Yeni şifre tekrar giriniz
-            new2_pin = input("Yeni şifre tekrar giriniz")
-            if new_pin == new2_pin :
-                print("Şifreniz güncellendi!")
-            else:
-                print("Şifreniz güncellenmedi")
-                counter = 0
+            
     else:
         counter = counter - 1
         if counter == 0:

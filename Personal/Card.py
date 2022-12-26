@@ -23,7 +23,7 @@ class Card:
         results = self.cursor.fetchall()
         for result in results:
             if str(result[1]) == str(self.__card_number) and str(result[3]) == str(self.__pin):
-                self.__customer_name = result[11]
+                self.__customer_name = result[12]
                 self.__card_expiry = result[2]
                 self.__account_number = result[0]
                 return True
@@ -34,3 +34,10 @@ class Card:
     def get_customer_account_number(self):
         self.get_billing_address()
         return self.__account_number
+
+    def change_pin(self,newPin):
+        self.get_billing_address()
+        query = "UPDATE card SET pin=%s WHERE accountid=%s"
+        self.cursor.execute(query,(str(newPin),self.__account_number))
+        self.cnx.commit()
+        return True
