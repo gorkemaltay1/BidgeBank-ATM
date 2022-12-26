@@ -9,8 +9,8 @@ class Balance:
     password="asdASD123!")
         self.cursor = self.cnx.cursor()
 
-    def accountBalance(self):
-        query = "SELECT totalbalance,availablebalance FROM account WHERE id=%s"
-        self.cursor.execute(query,self.__account_number)
+    def accountBalance(self,accountNum):
+        query = "SELECT * FROM account WHERE id = %s"
+        self.cursor.execute(query,(self.__account_number,))
         result = self.cursor.fetchall()
         return result

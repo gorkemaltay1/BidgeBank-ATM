@@ -123,8 +123,8 @@ while(counter > 0):
                         counter = 0 
         # Balance bitti.
         elif choice == "Balance Inquiry":
-            result = Balance(hesap_numarası).accountBalance()
-            print(f"Total balance:{result[0]},Available Balance: {result[1]}")         
+            result = Balance(hesap_numarası).accountBalance(hesap_numarası)
+            print(result[0][1],result[0][2])    
         # Internal bitti.
         elif choice == "Internal Transfer":
             # Paraya çekeceğin hesabı seçiniz:
