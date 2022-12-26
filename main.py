@@ -23,7 +23,7 @@ while(counter > 0):
         availableBalance = customerDatas[1]
         accountType = customerDatas[2]
         Screen.show_message(menuScreen,f"{kullanıcı_Kartı.get_customer_name()} hoş geldin.")
-        menuOptions = "Deposit      Withdraw        Transfer        Balance Inquiry     Internal Transfer   Exit/Take Card"
+        menuOptions = "Deposit      Withdraw        Transfer        Balance Inquiry     Internal Transfer   Exit/Take Card      Change PIN"
         Screen.show_message(menuScreen,message=menuOptions)
         choice = input("Lüften bir seçim yapınız:")
         # Withdraw bitti.
@@ -138,6 +138,20 @@ while(counter > 0):
         # Exit/Take Card bitti.
         elif choice == "Exit/Take Card":
             counter = 0
+        elif choice == "Change Pın":
+            # Kullanıcıdan ilk önce kendi pin adresini alırız.
+            pin = input("Pin tekrar giriniz:")
+            # pin kontrol edilir eğer eski ile aynıysa devam değilse counter 0 olacak.
+            # SQL sorgusunda kullanıcının account_number dan pin ile kendi şifresi karşıştır doğru ise diğer işlem değilse counter 0 
+            #Yeni şifre isteriz
+            new_pin = input("Yeni şifrenizi giriniz:")
+            #Yeni şifre tekrar giriniz
+            new2_pin = input("Yeni şifre tekrar giriniz")
+            if new_pin == new2_pin :
+                print("Şifreniz güncellendi!")
+            else:
+                print("Şifreniz güncellenmedi")
+                counter = 0
     else:
         counter = counter - 1
         if counter == 0:
