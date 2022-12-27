@@ -14,7 +14,7 @@ arka_plan.place(relx=0.1,rely=0.1,relwidth=0.8,relheight=0.87)
 logo1=tk.Frame(master,bg='#BCCEF8')
 logo1.place(relx=0.12,rely=0.15)
 
-img= ImageTk.PhotoImage(Image.open("Img/logo1.jpg"))
+img= ImageTk.PhotoImage(Image.open("logo1.jpg"))
 photo= tk.Label(logo1, image=img )
 photo.pack()
 
