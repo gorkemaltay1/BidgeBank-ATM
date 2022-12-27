@@ -1,7 +1,7 @@
 
 # BIDGE Bank
 
-Yıldız Teknik Üniversitesi Matematik Mühendisliği 4.sınıf 1.dönemde yer alan nesneye yönelik ileri programlama kapsamında verilen dönem ödevi.
+Yıldız Teknik Üniversitesi Matematik Mühendisliği 3.sınıf 1.dönemde yer alan nesneye yönelik ileri programlama kapsamında verilen dönem ödevi.
 
 
 ## ATM nasıl çalışıyor ?
